@@ -2,13 +2,11 @@
    Source: jukebox/client/src/styles/theme.css */
 :root {
     --canvas: #0f0a06;
-    --surface: #1c1208;
     --subtle: #3a2410;
     --divider: #6b4a30;
     --ink: #f5e6c8;
     --ink-dim: #c4906a;
     --gold: #f4a100;
-    --on-gold: #0f0a06;
 
     --sans: "Inter", ui-sans-serif, system-ui, sans-serif;
     --display: "Bebas Neue", "Impact", ui-sans-serif, sans-serif;
@@ -34,9 +32,13 @@ body {
 main {
     position: relative;
     z-index: 1;
-    max-width: 46rem;
-    margin: 0 auto;
-    padding: 3.5rem 1.25rem 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100dvh;
+    padding: 3rem 1.25rem;
+    text-align: center;
 }
 
 /* ─── Decorative note field, matching the app's welcome screen ─── */
@@ -56,11 +58,6 @@ main {
 }
 
 /* ─── Hero ─── */
-.hero {
-    text-align: center;
-    margin-bottom: 4rem;
-}
-
 .pill {
     display: inline-block;
     margin: 0 0 1.5rem;
@@ -94,127 +91,17 @@ h1 {
 
 .lead {
     max-width: 34rem;
-    margin: 0 auto;
+    margin: 0;
     font-size: 1.075rem;
-}
-
-/* ─── Sections ─── */
-section {
-    margin-bottom: 3.5rem;
-}
-
-h2 {
-    margin: 0 0 1.5rem;
-    color: var(--gold);
-    font-family: var(--display);
-    font-size: 1.9rem;
-    font-weight: 400;
-    letter-spacing: 0.05em;
-}
-
-h3 {
-    margin: 0 0 0.35rem;
-    font-size: 0.95rem;
-    font-weight: 600;
-    letter-spacing: 0.02em;
-}
-
-p {
-    margin: 0;
-}
-
-.prose {
-    color: var(--ink-dim);
-}
-
-.prose strong {
-    color: var(--ink);
-    font-weight: 600;
-}
-
-/* ─── Numbered steps ─── */
-.steps {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    counter-reset: step;
-}
-
-.steps li {
-    counter-increment: step;
-    position: relative;
-    padding: 0 0 1.5rem 3rem;
-}
-
-.steps li::before {
-    content: counter(step);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 2rem;
-    height: 2rem;
-    border: 1px solid var(--subtle);
-    border-radius: 999px;
-    color: var(--gold);
-    font-family: var(--display);
-    font-size: 1.15rem;
-    line-height: 2rem;
-    text-align: center;
-}
-
-.steps li:last-child {
-    padding-bottom: 0;
-}
-
-.steps p {
-    color: var(--ink-dim);
-}
-
-.steps em {
-    color: var(--ink);
-    font-style: italic;
-}
-
-/* ─── Cards ─── */
-.cards {
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: 1fr;
-}
-
-@media (min-width: 40rem) {
-    .cards {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
-.card {
-    padding: 1.25rem;
-    border: 1px solid var(--subtle);
-    border-radius: 0.75rem;
-    background-color: var(--surface);
-}
-
-.card p {
-    color: var(--ink-dim);
-    font-size: 0.95rem;
 }
 
 /* ─── Footer ─── */
 footer {
-    margin-bottom: 0;
-    padding-top: 2.5rem;
-    border-top: 1px solid var(--subtle);
-    text-align: center;
-}
-
-.footer-line {
-    color: var(--ink-dim);
-    font-size: 0.95rem;
+    margin-top: 3.5rem;
 }
 
 .footer-link {
-    margin-top: 0.75rem;
+    margin: 0;
     font-size: 0.7rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;

@@ -55,6 +55,31 @@ main {
     color: var(--gold);
     font-family: var(--display);
     line-height: 1;
+    opacity: var(--o);
+    transform: rotate(var(--r));
+    animation: twinkle var(--t) ease-in-out var(--d) infinite;
+    will-change: opacity, transform;
+}
+
+/* Rotation is re-stated in every frame because animating transform would
+   otherwise discard the note's resting angle. */
+@keyframes twinkle {
+    0%,
+    100% {
+        opacity: calc(var(--o) * 0.5);
+        transform: rotate(var(--r)) scale(0.96);
+    }
+    50% {
+        opacity: calc(var(--o) * 1.7);
+        transform: rotate(var(--r)) scale(1.06);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .notes span {
+        animation: none;
+        will-change: auto;
+    }
 }
 
 /* ─── Hero ─── */

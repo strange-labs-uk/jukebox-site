@@ -33,19 +33,34 @@
         <link rel="stylesheet" href="/css/main.css" />
     </head>
     <body>
+        <!-- Positions, sizes and rotations mirror the app's own NotesBackground.
+             --o is the note's resting opacity; --t and --d stagger the twinkle so no
+             two notes are ever in step. Negative delays start each one mid-cycle. -->
         <div class="notes" aria-hidden="true">
-            <span style="top: 6%; left: 4%; font-size: 5rem; transform: rotate(-14deg); opacity: 0.25">♫</span>
-            <span style="top: 12%; left: 88%; font-size: 3.5rem; transform: rotate(22deg); opacity: 0.22">♪</span>
-            <span style="top: 28%; left: 92%; font-size: 4.5rem; transform: rotate(8deg); opacity: 0.2">♩</span>
-            <span style="top: 72%; left: 90%; font-size: 5.5rem; transform: rotate(-20deg); opacity: 0.22">♬</span>
-            <span style="top: 85%; left: 78%; font-size: 3rem; transform: rotate(16deg); opacity: 0.25">♫</span>
-            <span style="top: 90%; left: 10%; font-size: 5rem; transform: rotate(-9deg); opacity: 0.22">♪</span>
-            <span style="top: 68%; left: 3%; font-size: 4rem; transform: rotate(12deg); opacity: 0.2">♬</span>
-            <span style="top: 45%; left: 5%; font-size: 2.5rem; transform: rotate(-22deg); opacity: 0.15">♩</span>
-            <span style="top: 20%; left: 55%; font-size: 2rem; transform: rotate(18deg); opacity: 0.12">♫</span>
-            <span style="top: 78%; left: 45%; font-size: 2.5rem; transform: rotate(-12deg); opacity: 0.12">♪</span>
-            <span style="top: 4%; left: 70%; font-size: 3rem; transform: rotate(25deg); opacity: 0.18">♩</span>
-            <span style="top: 55%; left: 95%; font-size: 3rem; transform: rotate(5deg); opacity: 0.15">♬</span>
+            <span style="top: 6%;  left: 4%;  font-size: 5rem;   --r: -14deg; --o: 0.25; --t: 6.5s; --d: -0.0s">♫</span>
+            <span style="top: 12%; left: 88%; font-size: 3.5rem; --r:  22deg; --o: 0.22; --t: 5.2s; --d: -2.1s">♪</span>
+            <span style="top: 28%; left: 92%; font-size: 4.5rem; --r:   8deg; --o: 0.20; --t: 7.4s; --d: -4.3s">♩</span>
+            <span style="top: 72%; left: 90%; font-size: 5.5rem; --r: -20deg; --o: 0.22; --t: 4.8s; --d: -1.2s">♬</span>
+            <span style="top: 85%; left: 78%; font-size: 3rem;   --r:  16deg; --o: 0.25; --t: 8.1s; --d: -3.7s">♫</span>
+            <span style="top: 90%; left: 10%; font-size: 5rem;   --r:  -9deg; --o: 0.22; --t: 6.0s; --d: -5.4s">♪</span>
+            <span style="top: 68%; left: 3%;  font-size: 4rem;   --r:  12deg; --o: 0.20; --t: 5.6s; --d: -0.9s">♬</span>
+            <span style="top: 45%; left: 5%;  font-size: 2.5rem; --r: -22deg; --o: 0.15; --t: 7.9s; --d: -2.8s">♩</span>
+            <span style="top: 20%; left: 55%; font-size: 2rem;   --r:  18deg; --o: 0.12; --t: 4.4s; --d: -3.1s">♫</span>
+            <span style="top: 78%; left: 45%; font-size: 2.5rem; --r: -12deg; --o: 0.12; --t: 6.8s; --d: -1.7s">♪</span>
+            <span style="top: 4%;  left: 70%; font-size: 3rem;   --r:  25deg; --o: 0.18; --t: 5.9s; --d: -4.9s">♩</span>
+            <span style="top: 55%; left: 95%; font-size: 3rem;   --r:   5deg; --o: 0.15; --t: 7.1s; --d: -0.4s">♬</span>
+            <span style="top: 8%;  left: 22%; font-size: 2rem;   --r:  16deg; --o: 0.12; --t: 4.6s; --d: -5.7s">♫</span>
+            <span style="top: 16%; left: 30%; font-size: 2.5rem; --r:  10deg; --o: 0.14; --t: 6.3s; --d: -2.5s">♪</span>
+            <span style="top: 2%;  left: 42%; font-size: 3rem;   --r:  -6deg; --o: 0.16; --t: 5.8s; --d: -1.9s">♪</span>
+            <span style="top: 34%; left: 14%; font-size: 3rem;   --r: -16deg; --o: 0.18; --t: 5.5s; --d: -4.1s">♬</span>
+            <span style="top: 30%; left: 40%; font-size: 1.75rem; --r: 24deg; --o: 0.10; --t: 8.4s; --d: -4.6s">♫</span>
+            <span style="top: 40%; left: 80%; font-size: 2rem;   --r:  20deg; --o: 0.13; --t: 7.7s; --d: -1.4s">♩</span>
+            <span style="top: 52%; left: 30%; font-size: 1.75rem; --r: 14deg; --o: 0.10; --t: 6.6s; --d: -5.1s">♪</span>
+            <span style="top: 60%; left: 68%; font-size: 2.5rem; --r:  -8deg; --o: 0.12; --t: 4.9s; --d: -3.3s">♫</span>
+            <span style="top: 66%; left: 82%; font-size: 2rem;   --r: -24deg; --o: 0.12; --t: 7.6s; --d: -0.3s">♩</span>
+            <span style="top: 82%; left: 22%; font-size: 2.5rem; --r: -18deg; --o: 0.16; --t: 7.2s; --d: -2.2s">♩</span>
+            <span style="top: 96%; left: 40%; font-size: 2.5rem; --r:  12deg; --o: 0.14; --t: 6.1s; --d: -3.9s">♬</span>
+            <span style="top: 94%; left: 62%; font-size: 3.5rem; --r:   6deg; --o: 0.20; --t: 5.1s; --d: -0.7s">♬</span>
         </div>
 
         <main>

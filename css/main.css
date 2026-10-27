@@ -32,13 +32,22 @@ body {
 main {
     position: relative;
     z-index: 1;
+    width: 100%;
+    max-width: 44rem;
+    margin-inline: auto;
+    padding: 3rem 1.25rem 4rem;
+}
+
+section {
+    text-align: center;
+}
+
+.hero {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 100dvh;
-    padding: 3rem 1.25rem;
-    text-align: center;
+    min-height: min(100dvh, 46rem);
 }
 
 /* ─── Decorative note field, matching the app's welcome screen ─── */
@@ -143,4 +152,149 @@ footer {
 .footer-link a:focus-visible {
     color: var(--gold);
     border-bottom-color: var(--gold);
+}
+
+/* ─── Call to action ─── */
+.cta {
+    display: inline-block;
+    margin-top: 2.25rem;
+    padding: 0.85rem 2rem;
+    border-radius: 0.5rem;
+    background: var(--gold);
+    color: var(--canvas);
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    letter-spacing: 0.01em;
+}
+
+.cta:hover,
+.cta:focus-visible {
+    background: #db8f00;
+}
+
+.cta-note {
+    margin: 0.75rem 0 0;
+    color: var(--ink-dim);
+    font-size: 0.8125rem;
+}
+
+/* ─── Sections ─── */
+h2 {
+    margin: 0 0 1.75rem;
+    color: var(--gold);
+    font-family: var(--display);
+    font-size: clamp(1.75rem, 7vw, 2.25rem);
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    line-height: 1.1;
+}
+
+section + section {
+    margin-top: 4.5rem;
+    padding-top: 4.5rem;
+    border-top: 1px solid var(--subtle);
+}
+
+/* ─── Collapsible section ─── */
+summary {
+    cursor: pointer;
+    /* Both are needed: the standard property plus the WebKit pseudo-element,
+       or Safari keeps its own disclosure triangle alongside the custom one. */
+    list-style: none;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary h2 {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin: 0;
+}
+
+summary h2::after {
+    content: "";
+    width: 0.5em;
+    height: 0.5em;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    transform: translateY(-0.15em) rotate(45deg);
+    transition: transform 150ms ease;
+}
+
+details[open] summary h2::after {
+    transform: translateY(0.1em) rotate(-135deg);
+}
+
+summary:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 4px;
+    border-radius: 0.25rem;
+}
+
+details[open] .steps {
+    margin-top: 1.75rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    summary h2::after {
+        transition: none;
+    }
+}
+
+/* ─── Numbered steps ─── */
+.steps {
+    display: grid;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: left;
+}
+
+.steps li {
+    display: grid;
+    grid-template-columns: 2rem 1fr;
+    gap: 0.25rem 1rem;
+    align-items: baseline;
+}
+
+.steps b {
+    grid-column: 2;
+    color: var(--ink);
+}
+
+.steps .num {
+    grid-row: span 2;
+    color: var(--gold);
+    font-family: var(--display);
+    font-size: 1.75rem;
+    line-height: 1;
+}
+
+.steps p {
+    grid-column: 2;
+    margin: 0;
+    color: var(--ink-dim);
+    font-size: 0.9375rem;
+}
+
+/* ─── Footer ─── */
+.legal {
+    margin: 1.5rem 0 0;
+    color: var(--ink-dim);
+    font-size: 0.75rem;
+    line-height: 1.7;
+}
+
+.legal a {
+    color: var(--ink-dim);
+}
+
+.legal a:hover,
+.legal a:focus-visible {
+    color: var(--gold);
 }
